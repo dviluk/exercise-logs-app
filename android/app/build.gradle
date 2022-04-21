@@ -247,6 +247,11 @@ android {
 
         }
     }
+
+    //
+    packagingOptions {
+        pickFirst '**/libc++_shared.so'
+    }
 }
 
 dependencies {
@@ -277,6 +282,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation project(':watermelondb-jsi') 
 }
 
 if (isNewArchitectureEnabled()) {
